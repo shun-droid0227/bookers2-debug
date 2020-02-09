@@ -51,7 +51,7 @@
 			<!--コメント送信フォーム-->
 			<%= form_for(@book_comment,url:book_comment_path,method: :post) do |f| %>
         <%= f.text_area :comment,class: "form-control",placeholder: "コメントをここに" %>
-				<%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+				<%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right"%>
 			<% end %>
 
 			<!--コメント表示用テーブル-->
