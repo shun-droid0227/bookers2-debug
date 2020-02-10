@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :book_comments,only: [:destroy]
   post '/book_comments/:id', to: 'book_comments#create'
 
+  resources :relationships, only: [:create, :destroy]
+  get '/followings/:id', to: 'relationships#followings_show',as: :following
+  get '/follower/:id', to: 'relationships#followers_show',as: :follower
+
   root 'home#top'
   get 'home/about'
 end
