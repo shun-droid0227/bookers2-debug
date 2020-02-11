@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   get '/followings/:id', to: 'relationships#followings_show',as: :following
   get '/follower/:id', to: 'relationships#followers_show',as: :follower
+  
+  get '/search', to: 'search#search'
 
   root 'home#top'
   get 'home/about'
