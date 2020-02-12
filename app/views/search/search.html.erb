@@ -1,4 +1,10 @@
 <h1>検索結果</h1>
 <% @contents.each do |f|%>
-<%= f.name %>
+  <% if @search_content == "user" %>
+    <%= f.name %>
+  <% end %>
+  <% if @search_content == "book" %>
+      <%= f.title %>
+  <% end %>
 <% end %>
+

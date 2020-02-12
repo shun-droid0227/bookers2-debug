@@ -37,13 +37,13 @@ class User < ApplicationRecord
   
   #検索メソッド 
   def self.search(method,word)
-    if method == ["forward_match"]
+    if method == "forward_match"
       @contents = User.where("name LIKE(?)","#{word}%")
-    elsif method == ["backward_match"]
+    elsif method == "backward_match"
       @contents = User.where("name LIKE(?)","%#{word}")
-    elsif method == ["perfect_match"]
+    elsif method == "perfect_match"
       @contents = User.where("#{word}")
-    elsif method == ["partial_match"]
+    elsif method == "partial_match"
       @contents = User.where("name LIKE(?)","%#{word}%")
     else
       @contents = User.all
