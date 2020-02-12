@@ -1,0 +1,18 @@
+<!--コメント送信フォーム-->
+<%= form_with mpdel: book_comment,url: book_comment_path,method: :post do |f| %>
+  <%= f.text_area :comment,class: "form-control",placeholder: "コメントをここに" %>
+  <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right"%>
+<% end %>
+
+<!--コメント表示用テーブル-->
+<table class = "table">
+  <% book.book_comments.each do |comment| %>
+  <tr>
+    <td><%= comment.comment %></td>
+    <% if comment.user == current_user%>
+      <td><%= link_to 'コメントを削除する',book_comment_path(comment.book),method: :delete, remote: true%></td>
+      <% else %>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
