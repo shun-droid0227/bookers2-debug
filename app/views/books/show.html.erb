@@ -35,6 +35,7 @@
 				<td><%= @book.book_comments.count %>コメント</td>
 				</tr>
 			</table>
+			<!--識別が必要なさそうなところにもidはいるのか-->
 			<div id="comment_buttons_<%= @book.id %>">
 				<%= render 'book_comments/comment', book_comment: @book_comment,book: @book%>
 			</div>
