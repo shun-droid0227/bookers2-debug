@@ -8,6 +8,8 @@
 <table class = "table">
   <% book.book_comments.each do |comment| %>
   <tr>
+    <td><%= comment.user.id %></td>
+    <td><%= comment.user.name %></td>
     <td><%= comment.comment %></td>
     <% if comment.user == current_user%>
       <td><%= link_to 'コメントを削除する',book_comment_path(comment.book),method: :delete, remote: true%></td>

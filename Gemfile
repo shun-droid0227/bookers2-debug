@@ -69,3 +69,4 @@ gem 'jquery-rails'
 
 
 gem 'pry-byebug'
+gem 'jp_prefecture'

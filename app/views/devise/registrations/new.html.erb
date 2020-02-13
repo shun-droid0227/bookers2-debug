@@ -10,6 +10,21 @@
   </div>
   <!--name表示の追加-->
 
+  <!--address表示の追加-->
+  <div class="field">
+    <%= f.label :zipcode%><br />
+    <%= f.text_field :zipcode %>
+  </div>
+  
+    <%= f.label :prefecture_code, '都道府県' %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %><br />
+  
+  
+    <%= f.label :address%><br />
+    <%= f.text_field :address %>
+  
+  <!--address表示の追加-->
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: "email" %>
