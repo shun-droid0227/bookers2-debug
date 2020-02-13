@@ -34,18 +34,22 @@ class UsersController < ApplicationController
 			@books = @user.books
 			render "edit"
   	end
-  end
-
+	end
+	
   private
   def user_params
-  	params.require(:user).permit(:name, :introduction, :profile_image)
-  end
+		params.require(:user).permit(:name, :introduction, :profile_image)
+	end
 
+	def zipedit
+		params.require(:user).permit(:zipcode, :address,:prefecture_code)
+	end
+	
   #url直接防止　メソッドを自己定義してbefore_actionで発動。
-   def baria_user
-  	unless params[:id].to_i == current_user.id
-  		redirect_to user_path(current_user)
-  	end
-   end
+	def baria_user
+	unless params[:id].to_i == current_user.id
+		redirect_to user_path(current_user)
+	end
+	end
 
 end
